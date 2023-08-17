@@ -5,8 +5,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 Route::prefix("auth",function(){
-  Route::get("register","auth/register/index");
-  Route::post("register-action","crud/save");
-  Route::get("login","auth/login/index");
-  Route::get("profile","auth/profile/index");
+  Route::get("register","auth/register");
+  Route::post("register-action","auth/register/action");
+  Route::get("login","auth/login");
+  Route::post("login-action","auth/login/action");
 }); // => Route::named('test')
+Route::get("profile","profile");

@@ -17,10 +17,10 @@
 							<h1>Login</h1>
 						 </div>
 					</div>
-                   <form action="" method="post" name="login">
+                   <form action="<?= base_url("auth/login-action") ?>" method="POST" name="login">
                            <div class="form-group">
-                              <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                              <label for="exampleInputEmail1">E-mail address</label>
+                              <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter E-mail">
                            </div>
                            <div class="form-group">
                               <label for="exampleInputEmail1">Password</label>
@@ -30,10 +30,10 @@
                               <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
                            </div>
                            <div class="col-md-12 text-center ">
-                          <a href="profile" <button type="submit"  class=" btn btn-block mybtn btn-primary tx-tfm" >Login </button></a>
+                        <button type="submit"  class=" btn btn-block mybtn btn-primary tx-tfm" >Login </button>
 
                            </div>
-                          
+
                            <div class="form-group">
                               <p class="text-center">Don't have account? <a href="register" id="signup">Sign up here</a></p>
                            </div>

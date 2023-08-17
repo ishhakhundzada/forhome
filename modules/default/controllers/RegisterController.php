@@ -1,7 +1,10 @@
 <?php
-class Crud extends MY_Controller {
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+
+class RegisterController extends MY_Controller {
+
 	public function __construct() {
-		/*call CodeIgniter's default Constructor*/
 		parent::__construct();
 	}
 
@@ -9,7 +12,7 @@ class Crud extends MY_Controller {
 		$this->view("register");
 	}
 
-	public function save() {
+	public function action() {
 		$data = [
 			"first_name"	=> $this->input->post("first_name"),
 			"last_name"	=> $this->input->post("last_name"),
@@ -17,7 +20,7 @@ class Crud extends MY_Controller {
       "password" => password_hash($this->input->post("password"),PASSWORD_BCRYPT)
 
 		];
-    $this->load->model("Crud_model","model");
+    $this->load->model("Register_model","model");
 		$result = $this->model->add($data);
 		if($result) {
       Flash::set("message","New user is registered successfully.");
