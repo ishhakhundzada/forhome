@@ -21,9 +21,12 @@ class Register extends MY_Controller
 			"first_name"	=> $this->input->post("first_name"),
 			"last_name"	=> $this->input->post("last_name"),
 			"email"		=> $this->input->post("email"),
-			"password" => password_hash($this->input->post("password"),PASSWORD_BCRYPT)
-
+			"password" => $this->input->post("password"),
 		];
+		$data["password"] = $data["password"] ? password_hash($data["password"],PASSWORD_DEFAULT) : NULL;
+
+		// validateArray($params, ["email", "password"]);
+
 		$this->load->model("auth/Register_model","model");
 		$result = $this->model->add($data);
 		if($result) {

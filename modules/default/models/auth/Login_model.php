@@ -13,11 +13,11 @@ class Login_model extends CI_Model {
 
 		$query= $this->db ->select("*")
 											->from("users")
-											->where("email","email")
+											->where("email",$params["email"])
 											->where("deleted_at",null)
 											->get();
-		$user = $this->db->row_array();
-
+		$user = $query->row_array();
+// var_dump($user);die;
 		if (!$query->num_rows()) {
       return rest_response(
         Status_codes::HTTP_CONFLICT,
@@ -25,8 +25,11 @@ class Login_model extends CI_Model {
       );
     }
 
-    if (!password_verify($password,$user["password"])) {
+// var_dump(password_verify("123456","123456"));
+    if (!password_verify($params["password"],$user["password"])) {
+// var_dump([$params["password"],$user["password"]]); die;
       return rest_response(
+
         Status_codes::HTTP_BAD_REQUEST,
         lang("Wrong email or password")
       );

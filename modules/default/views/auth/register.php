@@ -24,8 +24,8 @@
             <input min="3" type="text" name="first_name" placeholder="First Name" required />
             <input min="5" type="text" name="last_name" placeholder="Last Name" required />
   					<input min="8" type="email" name="email" placeholder="Email" required>
-  					<input min="8" type="password" name="password" placeholder="Password" required id="password">
-            <input min="8" type="password" name="password" placeholder="Confirm Password" required id="confirmPassword">
+  					<input type="password" name="password" placeholder="Password" required id="password">
+            <input type="password" name="password" placeholder="Confirm Password" required id="confirmPassword">
             <button id="btn"  disabled type="submit" name="button" />Sign up</button>
   			</div>
 

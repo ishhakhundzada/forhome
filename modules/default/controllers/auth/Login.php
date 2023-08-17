@@ -22,15 +22,18 @@ class Login extends MY_Controller
     ];
     $this->load->model("auth/Login_model", "model");
     $result = $this->model->action($params);
-    if (isset($result["code"]) && $result["code"] === Status_codes::HTTP_ACCEPTED) {
+// var_dump($result); die;
+    if (isset($result["code"]) && $result["code"] === Status_codes::HTTP_OK) {
       Flash::set("type","success");
       Flash::set("message",$result["message"]);
       redirect(base_url("profile"));
+			// var_dump($result); die;
 
     } else {
       Flash::set("type","danger");
       Flash::set("message",isset($result["message"]) ? $result["message"] : "Internal Server Error");
       redirect(base_url("auth/login"));
     }
+		// redirect(base_url("profile"));
   }
 }
