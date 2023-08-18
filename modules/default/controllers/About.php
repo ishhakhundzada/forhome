@@ -9,7 +9,8 @@ class About extends MY_Controller
 
   public function index(){
     $this->view([
-      "about"
+			"layouts/header",
+			"about"
     ],[
       "title" => "About"
     ]);

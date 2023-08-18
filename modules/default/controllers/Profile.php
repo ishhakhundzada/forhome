@@ -14,6 +14,7 @@ class Profile extends MY_Controller
 		$this->load->model("Profile_model","model");
 		$results=$this->model->readdata($params);
 		$this->view([
+			"layouts/header",
 			"profile"
 
 		],[

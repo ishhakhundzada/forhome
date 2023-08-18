@@ -3,6 +3,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel = "stylesheet" type = "text/css"
    href = "<?= assets("css/about_style.css") ?>">
+
 <section class="section about-section gray-bg" id="about">
             <div class="container">
                 <div class="row align-items-center flex-row-reverse">
