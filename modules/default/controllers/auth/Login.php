@@ -26,8 +26,9 @@ class Login extends MY_Controller
     if (isset($result["code"]) && $result["code"] === Status_codes::HTTP_OK) {
       Flash::set("type","success");
       Flash::set("message",$result["message"]);
+			$this->session->set_userdata($result["data"]);
+			// var_dump($result["data"]); die;
       redirect(base_url("profile"));
-			// var_dump($result); die;
 
     } else {
       Flash::set("type","danger");

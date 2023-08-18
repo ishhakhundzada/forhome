@@ -8,10 +8,17 @@ class Profile extends MY_Controller
 	}
 
   public function index(){
-    $this->view([
-      "auth/profile"
-    ],[
-      "title" => "Porfile"
-    ]);
+		$params = [
+			"id" => $this->session->userdata("id")
+		];
+		$this->load->model("Profile_model","model");
+		$results=$this->model->readdata($params);
+		$this->view([
+			"profile"
+
+		],[
+			"title" => "Porfile",
+			'row'=>$results["data"]
+		]);
   }
 }

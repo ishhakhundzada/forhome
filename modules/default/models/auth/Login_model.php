@@ -11,7 +11,7 @@ class Login_model extends CI_Model {
 
 	function action($params){
 
-		$query= $this->db ->select("*")
+		$query= $this->db ->select("first_name,last_name,id,email,is_active,password")
 											->from("users")
 											->where("email",$params["email"])
 											->where("deleted_at",null)

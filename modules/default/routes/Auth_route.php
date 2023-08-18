@@ -11,3 +11,6 @@ Route::prefix("auth",function(){
   Route::post("login-action","auth/login/action");
 }); // => Route::named('test')
 Route::get("profile","profile");
+Route::get("about","about");
+
+// Route::get("profile","profile/readdata");

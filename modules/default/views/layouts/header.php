@@ -1,7 +1,7 @@
 <html>
         <head>
-                <title>Aitch</title>
+                <title>Here we go again</title>
         </head>
         <body>
 
-                <h1><?php echo $title; ?></h1>
+                <h1><?= $title; ?></h1>
