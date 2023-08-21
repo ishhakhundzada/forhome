@@ -6,6 +6,7 @@ class Register extends MY_Controller
 
 	public function __construct() {
 		parent::__construct();
+		Auth::guest(true);
 	}
 
   public function index(){

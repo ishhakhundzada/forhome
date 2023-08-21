@@ -91,7 +91,7 @@ button:disabled{
 	transition: .8s ease-in-out;
 }
 
-/* #chk:checked ~ .login{
+#chk:checked ~ .login{
 	transform: translateY(-600px);
 }
 #chk:checked ~ .login label{
@@ -99,4 +99,4 @@ button:disabled{
 }
 #chk:checked ~ .signup label{
 	transform: scale(.6);
-} */
+}

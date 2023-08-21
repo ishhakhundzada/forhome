@@ -9,8 +9,8 @@ Route::prefix("auth",function(){
   Route::post("register-action","auth/register/action");
   Route::get("login","auth/login");
   Route::post("login-action","auth/login/action");
-}); // => Route::named('test')
-Route::get("profile","profile");
-Route::get("about","about");
+});
+
+
 
 // Route::get("profile","profile/readdata");

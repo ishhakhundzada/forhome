@@ -5,6 +5,7 @@ class Login extends MY_Controller
 {
 	public function __construct() {
 		parent::__construct();
+		Auth::guest(true);
 	}
 
   public function index(){
@@ -24,11 +25,11 @@ class Login extends MY_Controller
     $result = $this->model->action($params);
 // var_dump($result); die;
     if (isset($result["code"]) && $result["code"] === Status_codes::HTTP_OK) {
+			$result["data"]["is_active"] = $result["data"]["is_active"] === "1";
       Flash::set("type","success");
       Flash::set("message",$result["message"]);
 			$this->session->set_userdata($result["data"]);
-			// var_dump($result["data"]); die;
-      redirect(base_url("profile"));
+      redirect(base_url("user/note"));
 
     } else {
       Flash::set("type","danger");

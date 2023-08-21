@@ -6,38 +6,36 @@ class Login_model extends CI_Model {
 
   function __construct(){
     parent::__construct();
-    // $this->db = $this->load->database("test_db",true);
   }
 
 	function action($params){
 
-		$query= $this->db ->select("first_name,last_name,id,email,is_active,password")
+		$user_query = $this->db ->select("first_name,last_name,id,email,password,is_active")
 											->from("users")
 											->where("email",$params["email"])
 											->where("deleted_at",null)
 											->get();
-		$user = $query->row_array();
-// var_dump($user);die;
-		if (!$query->num_rows()) {
+		$user_row = $user_query->row_array();
+		if (!$user_query->num_rows()) {
       return rest_response(
-        Status_codes::HTTP_CONFLICT,
+        Status_codes::HTTP_NO_CONTENT,
         "User not found"
       );
     }
 
-// var_dump(password_verify("123456","123456"));
-    if (!password_verify($params["password"],$user["password"])) {
-// var_dump([$params["password"],$user["password"]]); die;
+    if (!password_verify($params["password"],$user_row["password"])) {
       return rest_response(
-
         Status_codes::HTTP_BAD_REQUEST,
         lang("Wrong email or password")
       );
     }
-		  return rest_response(
-        Status_codes::HTTP_OK,
-        "Successfully logged in",
-        $user
-      );
+    unset($user_row["password"]);
+
+    return rest_response(
+      Status_codes::HTTP_OK,
+      "Successfully logged in",
+      $user_row
+    );
 	}
+  
 }

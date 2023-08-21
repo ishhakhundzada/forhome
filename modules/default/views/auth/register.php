@@ -21,9 +21,9 @@
   			<div class="signup">
 
   					<label for="chk" aria-hidden="true">Sign up</label>
-            <input min="3" type="text" name="first_name" placeholder="First Name" required />
-            <input min="5" type="text" name="last_name" placeholder="Last Name" required />
-  					<input min="8" type="email" name="email" placeholder="Email" required>
+            <input type="text" name="first_name" placeholder="First Name" required />
+            <input type="text" name="last_name" placeholder="Last Name" required />
+  					<input type="email" name="email" placeholder="Email" required>
   					<input type="password" name="password" placeholder="Password" required id="password">
             <input type="password" name="password" placeholder="Confirm Password" required id="confirmPassword">
             <button id="btn"  disabled type="submit" name="button" />Sign up</button>
@@ -32,8 +32,8 @@
 
   			<div class="login">
   				<form>
-  					<label for="chk" aria-hidden="true"><a href="login" > Login </a> </label>
-
+  					<label for="chk" aria-hidden="true"> More  </label>
+            <label for="chk" aria-hidden="true"><a href="login" > Login </a> </label>
   				</form>
   			</div>
   	</div>

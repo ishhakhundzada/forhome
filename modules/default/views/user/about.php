@@ -15,21 +15,14 @@
                             <div class="row about-list">
                                 <div class="col-md-6">
                                     <div class="media">
-                                        <label>Birthday</label>
+                                        <label>First Name </label>
                                         <p>4th april 1998</p>
                                     </div>
                                     <div class="media">
-                                        <label>Age</label>
+                                        <label>Last Name</label>
                                         <p>22 Yr</p>
                                     </div>
-                                    <div class="media">
-                                        <label>Residence</label>
-                                        <p>Canada</p>
-                                    </div>
-                                    <div class="media">
-                                        <label>Address</label>
-                                        <p>California, USA</p>
-                                    </div>
+                                  
                                 </div>
                                 <div class="col-md-6">
                                     <div class="media">
@@ -40,14 +33,7 @@
                                         <label>Phone</label>
                                         <p>820-885-3321</p>
                                     </div>
-                                    <div class="media">
-                                        <label>Skype</label>
-                                        <p>skype.0404</p>
-                                    </div>
-                                    <div class="media">
-                                        <label>Freelance</label>
-                                        <p>Available</p>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>

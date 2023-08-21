@@ -62,7 +62,8 @@ $autoload['libraries'] = [
   "Input",
   "Flash",
   "session",
-  "database"
+  "database",
+  "form_validation"
   // "Custom_model"
 ];
 
