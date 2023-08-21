@@ -21,8 +21,13 @@ class Settings extends MY_Controller
   }
 	function changepass(){
 		$data =[
-			
-		]
+			"password" =>$this->input->post("password"),
+			"newPassword"=>$this->input->post("newPassword"),
+		];
+		$data["newPassword"] = $data["newPassword"] ? password_hash($data["newPassword"],PASSWORD_DEFAULT) : NULL;
+		$this->load->model("user/Settings_model","model");
+
+
 
 	}
 }

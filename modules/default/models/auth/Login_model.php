@@ -11,10 +11,10 @@ class Login_model extends CI_Model {
 	function action($params){
 
 		$user_query = $this->db ->select("first_name,last_name,id,email,password,is_active")
-											->from("users")
-											->where("email",$params["email"])
-											->where("deleted_at",null)
-											->get();
+											      ->from("users")
+											      ->where("email",$params["email"])
+											      ->where("deleted_at",null)
+											      ->get();
 		$user_row = $user_query->row_array();
 		if (!$user_query->num_rows()) {
       return rest_response(
@@ -37,5 +37,5 @@ class Login_model extends CI_Model {
       $user_row
     );
 	}
-  
+
 }

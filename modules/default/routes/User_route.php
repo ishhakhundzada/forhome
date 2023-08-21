@@ -11,7 +11,7 @@ Route::prefix("user",function(){
   Route::post("home-action","user/home/action");
   Route::post("change","user/profile/change");
   Route::get("change","user/profile/change");
-  Route::post("changepass","user/settings/changsepass")  
+  Route::post("changepass","user/settings/changsepass");
 });
 Route::post("logout","user/profile/logout");
 

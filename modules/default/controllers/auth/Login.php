@@ -23,6 +23,7 @@ class Login extends MY_Controller
     ];
     $this->load->model("auth/Login_model", "model");
     $result = $this->model->action($params);
+		validateArray($params,["email,password"]);
 // var_dump($result); die;
     if (isset($result["code"]) && $result["code"] === Status_codes::HTTP_OK) {
 			$result["data"]["is_active"] = $result["data"]["is_active"] === "1";

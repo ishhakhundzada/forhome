@@ -6,3 +6,6 @@ $autoload["libraries"] = [
   "Status_codes",
   "Auth"
 ];
+$autoload['helpers'] = [
+  "validate"
+];
